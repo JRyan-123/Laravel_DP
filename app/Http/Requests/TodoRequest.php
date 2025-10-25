@@ -22,7 +22,7 @@ class TodoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|max:125',
+            'title' => 'required|max:125|unique:todos,title',
         ];
     }
 }
