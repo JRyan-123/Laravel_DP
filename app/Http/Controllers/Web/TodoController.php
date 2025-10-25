@@ -9,7 +9,7 @@ use App\Services\TodoService;
 use Illuminate\Http\Request;
 
 class TodoController extends Controller
-{   
+{
     /**
      * Class constructor.
      */
@@ -28,7 +28,7 @@ class TodoController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {   
+    {
         return view('create');
     }
 

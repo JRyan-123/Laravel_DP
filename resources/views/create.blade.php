@@ -15,11 +15,14 @@
                         <input type="text" name="title" id="title"
                             class=" text-neutral-950 flex-1 border border-gray-300 rounded-l px-3 py-2 focus:outline-none "
                             placeholder="Enter new todo..." required>
+
                         <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-r hover:bg-blue-700">
                             Add
                         </button>
                     </form>
-
+                    @error('title')
+                        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
         </div>

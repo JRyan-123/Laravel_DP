@@ -35,6 +35,7 @@ class TodoLivewire extends Component
     public function toggle(int $id)
     {   
         $this->todo_service->toggleCompleted($id);
+        $this->todos = $this->todo_service->list(auth()->id());
     }
 
     public function delete(int $id)

@@ -1,4 +1,5 @@
 <div>
+    <h1 class="mb-4">Task</h1>
     <ul class="space-y-2">
         @foreach($todos as $todo)
             <li class="flex items-center justify-between border-b pb-2">
@@ -6,11 +7,11 @@
                     <input 
                         type="checkbox" 
                         wire:click="toggle({{ $todo->id }})"
-                        {{ $todo->completed ? 'checked' : '' }}
-                        class="mr-2">
-                    <span class="{{ $todo->completed ? 'line-through text-gray-400' : '' }}">
+                        @checked($todo->completed)
+                        class="mr-2" id="{{ $todo->title }}">
+                    <label class="{{ $todo->completed ? 'line-through text-gray-400' : '' }}" for="{{ $todo->title }}">
                         {{ $todo->title }}
-                    </span>
+                    </label>
                 </div>
                 <button 
                     wire:click="delete({{ $todo->id }})"
